@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base{
+    
+    @font-face {
+        font-family: 'Sans_Bold';
+        src: url('./fonts/IRANSans/Sans_Bold.ttf') format('.ttf');
+    }
+    @font-face {
+        font-family: 'Sans Black';
+        src: url('./fonts/IRANSans/Sans_Black.ttf') format('.ttf');
+    }
+        
+}
+
+@layer components{
+
+}
+body{
+    font-family: 'iransansBlack';
+    font-size: 1.2rem;
+}
+*{
+    direction: rtl;
+    padding: 0;
+    right: 0;
+
+}
+html{
+    background-color: #FBFBFB;
+}
+.all{
+    border: 2px solid red;
+    display: inline-block;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.all:hover .list{
+    display: flex;
+    gap: 2rem;
+}
+.order_list{
+    display: flex;
+    gap: 2rem;
+
+}
+.list_link{
+    display: flex;
+    gap: 2rem;
+}
