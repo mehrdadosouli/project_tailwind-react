@@ -1,54 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base{
-    
-    @font-face {
-        font-family: 'Sans_Bold';
-        src: url('./fonts/IRANSans/Sans_Bold.ttf') format('.ttf');
-    }
-    @font-face {
-        font-family: 'Sans Black';
-        src: url('./fonts/IRANSans/Sans_Black.ttf') format('.ttf');
-    }
-        
+@layer base {
+  @font-face {
+    font-family: "iransans";
+    src: url("./fonts/IRANSans/IRANSans.ttf") format("ttf");
+  }
+  @font-face {
+    font-family: "iransansbold";
+    src: url("./fonts/IRANSans/IRANSans_Bold.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "Morabba-Bold";
+    src: url("./fonts/IRANSans/Morabba-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Morabba";
+    src: url("./fonts/IRANSans/Morabba-Light.woff2") format("woff2");
+  }
 }
 
-@layer components{
+@layer components {
+  .btn {
+    padding: 10px 20px 10px 20px;
+    border-radius: 16px 16px 16px 16px;
+    background-color: #254e38;
+    font-size: 1.7rem;
+    color: white;
+  }
+  .btn_white {
+    padding: 10px 20px 10px 20px;
+    border-radius: 16px 16px 16px 16px;
+    background-color: white;
+    font-size: 1.7rem;
+    color: black;
+  }
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-family: "iransans";
+}
+*,
+*::after,
+*::before {
+  direction: rtl;
+  padding: 0;
+  right: 0;
+  box-sizing: inherit;
+}
+html {
+  background-color: #fbfbfb;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
 
+.all {
+  border: 2px solid red;
+  display: inline-block;
 }
-body{
-    font-family: 'iransansBlack';
-    font-size: 1.2rem;
-}
-*{
-    direction: rtl;
-    padding: 0;
-    right: 0;
-
-}
-html{
-    background-color: #FBFBFB;
-}
-.all{
-    border: 2px solid red;
-    display: inline-block;
-}
-.list{
-    display: flex;
-    flex-direction: column;
+.list {
+  display: flex;
+  flex-direction: column;
 }
 
-.all:hover .list{
-    display: flex;
-    gap: 2rem;
+.all:hover .list {
+  display: flex;
+  gap: 2rem;
 }
-.order_list{
-    display: flex;
-    gap: 2rem;
-
+.order_list {
+  display: flex;
+  gap: 2rem;
 }
-.list_link{
-    display: flex;
-    gap: 2rem;
+.list_link {
+  display: flex;
+  gap: 2rem;
 }

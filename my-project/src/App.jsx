@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/header/Header";
+import TopMain from "./components/topMain/TopMain";
 import {Routes,Route} from 'react-router-dom'
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/درباره ما" element={<Header />} />
           <Route path="/تماس با ما" element={<Header />} />
         </Routes>
+        <TopMain />
       </div>
     </>
   );
