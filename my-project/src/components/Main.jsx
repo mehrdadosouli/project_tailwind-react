@@ -1,6 +1,5 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
-import Header from "./header/Header";
 import TopMain from "./topMain/TopMain";
 import Category from "./category/Category";
 // import Vall from "./category/Vall";
@@ -16,12 +15,9 @@ export default function Main() {
   return (
     <>
       <div className="w-full h-full bg-base">
-      <Header />
       <TopMain />
       <Category />
-        {/* <Routes>
-          
-        </Routes> */}
+        
 
        
       </div>

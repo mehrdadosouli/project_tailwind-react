@@ -1,11 +1,17 @@
-import React from 'react';
-import TopMain from './topMain/TopMain';
-const Main = () => {
-    return (
-        <div>
-            <TopMain />
-        </div>
-    );
-};
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import './index.css'
+import CategoryContextProvider from "./context/CategoryContextProvider";
+import { BrowserRouter } from "react-router-dom";
 
-export default Main;
+
+const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(
+        <BrowserRouter>
+        <CategoryContextProvider>
+            <App />
+        </CategoryContextProvider>
+        </BrowserRouter>
+            )

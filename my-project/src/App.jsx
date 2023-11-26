@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "./components/header/Header";
-import TopMain from "./components/topMain/TopMain";
+import React,{useEffect,useState} from "react";
+import Main from './components/Main'
+import Hamburger from "./components/header/Hamburger";
 import {Routes,Route} from 'react-router-dom'
 function App() {
   const [show,setSHow]=useState(true)
@@ -22,14 +22,17 @@ useEffect(()=>{
   return (
     <>
       <div className="w-full h-full bg-base">
+    {show ?
         <Routes>
-          <Route path="/" element={<Header />} />
-          <Route path="/فروشگاه" element={<Header />} />
-          <Route path="/وبلاگ" element={<Header />} />
-          <Route path="/درباره ما" element={<Header />} />
-          <Route path="/تماس با ما" element={<Header />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/فروشگاه" element={<Main />} />
+          <Route path="/وبلاگ" element={<Main />} />
+          <Route path="/درباره ما" element={<Main />} />
+          <Route path="/تماس با ما" element={<Main />} />
         </Routes>
-        <TopMain />
+      :
+      <Hamburger />
+    }
       </div>
     </>
   );
