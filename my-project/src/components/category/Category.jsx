@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { CategoryContext } from '../../context/CategoryContextProvider'
 import ContentCategory from './ContentCategory'
+import { CSSTransition } from 'react-transition-group';
+
 import image1 from '../../photo/1.jpg'
 import image2 from '../../photo/2.jpg'
 import image3 from '../../photo/3.jpg'
@@ -44,26 +46,30 @@ const reducer=(state,action)=>{
 
 export default function Category() {
   const [loadCategory,setloadCategor]=useState(true)
+  const [isVisible,setIsVisible]=useState(false)
   const [state,dispatch]=useReducer(reducer,initial)
   const categoryData=useContext(CategoryContext)
   useEffect(()=>{
     loadCategory && dispatch({type:'defaults'})
-  },[loadCategory])
+    setIsVisible(true)
+  },[loadCategory,isVisible])
   
   return (
     
     <>
-    <div className='flex [&>*]:hover:cursor-pointer gap-5 py-8 w-10/12 lg:w-[64%] xl:w-[50%] mr-[9%] my-10 lg:[&>*]:p-8 [&>*]:p-4 flex-wrap [&>*]:rounded-2xl [&>*]:bg-white bg-[#F5F9FF] justify-center'>
-       
-        <span onClick={()=>{dispatch({type:'divar',payload:categoryData.divar}),setloadCategor(false)}}>دیوار کوب</span>
-        <span onClick={()=>{dispatch({type:'choob',payload:categoryData.choob}),setloadCategor(false)}}>لوازم چوبی</span>
-        <span onClick={()=>{dispatch({type:'chiken',payload:categoryData.chiken}),setloadCategor(false)}}>لوازم آشپزخانه</span>
-        <span onClick={()=>{dispatch({type:'konsool',payload:categoryData.konsool}),setloadCategor(false)}}>میز و کنسول</span>
-        <span onClick={()=>{dispatch({type:'dekor',payload:categoryData.dekor}),setloadCategor(false)}}>شلف و دکور</span>
+    <div className='w-10/12 flex mx-auto'>
+    <div className='flex [&>*]:hover:cursor-pointer gap-5 py-10 px-10 mt-10 lg:[&>*]:p-8 [&>*]:p-4 flex-wrap [&>*]:rounded-2xl [&>*]:bg-white bg-[#F5F9FF]'>
+        <span onClick={()=>{dispatch({type:'divar',payload:categoryData.divar}),setloadCategor(false),setIsVisible(!isVisible)}}>دیوار کوب</span>
+        <span onClick={()=>{dispatch({type:'choob',payload:categoryData.choob}),setloadCategor(false),setIsVisible(!isVisible)}}>لوازم چوبی</span>
+        <span onClick={()=>{dispatch({type:'chiken',payload:categoryData.chiken}),setloadCategor(false),setIsVisible(!isVisible)}}>لوازم آشپزخانه</span>
+        <span onClick={()=>{dispatch({type:'konsool',payload:categoryData.konsool}),setloadCategor(false),setIsVisible(!isVisible)}}>میز و کنسول</span>
+        <span onClick={()=>{dispatch({type:'dekor',payload:categoryData.dekor}),setloadCategor(false),setIsVisible(!isVisible)}}>شلف و دکور</span>
       </div>
-      
-    <div className='flex w-10/12 justify-between items-center mx-auto py-10 gap-10'>    
+    </div>
+    <div className={`flex w-10/12 py-10 items-center mx-auto bg-[#F5F9FF]`}>    
+      <div className={`flex w-10/12 flex-wrap items-center mx-auto lg:gap-5 gap-10 bg-[#F5F9FF] justify-center ${isVisible ? 'animate-fade' : "" }`}>
         <ContentCategory data={state} />
+      </div>
     </div>
       
     </>

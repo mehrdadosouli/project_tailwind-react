@@ -4,12 +4,8 @@ import Hamburger from "./components/header/Hamburger";
 import {Routes,Route} from 'react-router-dom'
 function App() {
   const [show,setSHow]=useState(true)
-useEffect(()=>{
-  if(window.innerWidth > '992'){
-    setSHow(true)
-  }else{
-    setSHow(false)
-  }
+
+
   window.addEventListener('resize',(e)=>{
     if(window.innerWidth > '992'){
       setSHow(true)
@@ -17,6 +13,14 @@ useEffect(()=>{
       setSHow(false)
     }
   })
+
+  useEffect(()=>{
+    if(window.innerWidth > '992'){
+      setSHow(true)
+    }else{
+      setSHow(false)
+    }
+    
 },[])
 
   return (
@@ -31,7 +35,10 @@ useEffect(()=>{
           <Route path="/تماس با ما" element={<Main />} />
         </Routes>
       :
-      <Hamburger />
+      <>
+        <Hamburger />
+        <Main />      
+      </>
     }
       </div>
     </>
