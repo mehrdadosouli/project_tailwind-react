@@ -1,6 +1,7 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
 import TopMain from "./topMain/TopMain";
+import AbouteUs from './aboute/AbouteUs'
 import Category from "./category/Category";
 // import Vall from "./category/Vall";
 // import Shop from "./category/shopping/Shop";
@@ -17,9 +18,7 @@ export default function Main() {
       <div className="w-full h-full bg-base">
       <TopMain />
       <Category />
-        
-
-       
+      <AbouteUs />
       </div>
     </>
   )

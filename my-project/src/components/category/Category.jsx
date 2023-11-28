@@ -58,20 +58,19 @@ export default function Category() {
     
     <>
     <div className='w-10/12 flex mx-auto'>
-    <div className='flex [&>*]:hover:cursor-pointer gap-5 py-10 px-10 mt-10 lg:[&>*]:p-8 [&>*]:p-4 flex-wrap [&>*]:rounded-2xl [&>*]:bg-white bg-[#F5F9FF]'>
-        <span onClick={()=>{dispatch({type:'divar',payload:categoryData.divar}),setloadCategor(false),setIsVisible(!isVisible)}}>دیوار کوب</span>
-        <span onClick={()=>{dispatch({type:'choob',payload:categoryData.choob}),setloadCategor(false),setIsVisible(!isVisible)}}>لوازم چوبی</span>
-        <span onClick={()=>{dispatch({type:'chiken',payload:categoryData.chiken}),setloadCategor(false),setIsVisible(!isVisible)}}>لوازم آشپزخانه</span>
-        <span onClick={()=>{dispatch({type:'konsool',payload:categoryData.konsool}),setloadCategor(false),setIsVisible(!isVisible)}}>میز و کنسول</span>
-        <span onClick={()=>{dispatch({type:'dekor',payload:categoryData.dekor}),setloadCategor(false),setIsVisible(!isVisible)}}>شلف و دکور</span>
+      <div className='flex [&>*]:hover:cursor-pointer gap-5 py-10 px-10 mt-10 lg:[&>*]:p-8 [&>*]:p-4 flex-wrap [&>*]:rounded-2xl [&>*]:bg-white bg-[#F5F9FF]'>
+          <span onClick={()=>{dispatch({type:'divar',payload:categoryData.divar}),setloadCategor(false),setIsVisible(!isVisible)}}>دیوار کوب</span>
+          <span onClick={()=>{dispatch({type:'choob',payload:categoryData.choob}),setloadCategor(false),setIsVisible(!isVisible)}}>لوازم چوبی</span>
+          <span onClick={()=>{dispatch({type:'chiken',payload:categoryData.chiken}),setloadCategor(false),setIsVisible(!isVisible)}}>لوازم آشپزخانه</span>
+          <span onClick={()=>{dispatch({type:'konsool',payload:categoryData.konsool}),setloadCategor(false),setIsVisible(!isVisible)}}>میز و کنسول</span>
+          <span onClick={()=>{dispatch({type:'dekor',payload:categoryData.dekor}),setloadCategor(false),setIsVisible(!isVisible)}}>شلف و دکور</span>
       </div>
     </div>
     <div className={`flex w-10/12 py-10 items-center mx-auto bg-[#F5F9FF]`}>    
-      <div className={`flex w-10/12 flex-wrap items-center mx-auto lg:gap-5 gap-10 bg-[#F5F9FF] justify-center ${isVisible ? 'animate-fade' : "" }`}>
+      <div className={`flex w-full flex-wrap items-center mx-auto lg:gap-5 gap-10 bg-[#F5F9FF] justify-center ${isVisible ? 'animate-fade' : "" }`}>
         <ContentCategory data={state} />
       </div>
     </div>
-      
     </>
   )
 }
